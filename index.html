@@ -4,8 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CapraLabsGames</title>
-<meta http-equiv="refresh" content="0; url=/wordwizard-juego/">
-<style>body{margin:0;background:#1c2f38;color:#e3ece0;font:600 16px system-ui,sans-serif;display:grid;place-items:center;height:100vh}a{color:#f2c66d}</style>
+<meta name="description" content="CapraLabsGames: juegos chiquitos hechos con cariño en Buenos Aires. Word Wizard, el juego de palabras con Silabo, el maguito.">
+<meta property="og:title" content="CapraLabsGames">
+<meta property="og:description" content="Juegos chiquitos hechos con cariño en Buenos Aires.">
+<meta property="og:image" content="https://capralabsgames.com/assets/wordwizard-banner.jpg">
+<link rel="icon" href="assets/wordwizard-icono.png">
+<style>
+  @font-face { font-family: 'Fredoka'; src: url(assets/fredoka-latin.woff2) format('woff2'); font-weight: 300 700; font-display: swap; }
+  @font-face { font-family: 'Nunito'; src: url(assets/nunito-latin.woff2) format('woff2'); font-weight: 200 1000; font-display: swap; }
+  :root { color-scheme: dark; --noche: #1c2f38; --pino: #2c4d58; --texto: #e3ece0; --suave: #b5c8bd; --oro: #f2c66d; --borde: #16262c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--noche); color: var(--texto); font: 600 16px/1.55 'Nunito', system-ui, sans-serif; }
+  .envoltura { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .marca { font: 700 26px 'Fredoka', sans-serif; color: #fff; letter-spacing: .3px; text-decoration: none; }
+  .marca span { color: var(--oro); }
+  nav a { color: var(--suave); text-decoration: none; margin-left: 18px; font-weight: 700; }
+  nav a:hover { color: #fff; }
+  .intro { padding: 36px 0 28px; max-width: 620px; }
+  .intro h1 { font: 700 clamp(30px, 6vw, 46px)/1.1 'Fredoka', sans-serif; color: #fff; margin: 0 0 12px; text-wrap: balance; }
+  .intro p { color: var(--suave); font-size: 18px; margin: 0; }
+  .juego { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); border-radius: 22px; overflow: hidden; background: #3f666c;
+    border: 3px solid var(--borde); box-shadow: inset 0 0 0 3px #67948f, 0 6px 0 var(--borde), 0 30px 60px rgba(0,0,0,.35); }
+  .juego img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
+  .juego-texto { padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .juego-texto small { font: 700 12px 'Fredoka', sans-serif; letter-spacing: 3px; color: var(--oro); }
+  .juego-texto h2 { font: 700 30px/1.1 'Fredoka', sans-serif; color: #fff; margin: 0; }
+  .juego-texto p { margin: 0; }
+  .botones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 14px; border: 3px solid var(--borde); font: 600 17px 'Fredoka', sans-serif; text-decoration: none; }
+  .btn-oro { background: var(--oro); color: #2a2412; box-shadow: inset 0 3px 0 #ffe2a0, inset 0 -5px 0 #c49a42, 0 4px 0 var(--borde); }
+  .btn-madera { background: #4c5a4b; color: #f3f6ee; box-shadow: inset 0 3px 0 #5f6e5c, inset 0 -4px 0 #3a4639, 0 4px 0 var(--borde); }
+  .btn:active { transform: translateY(3px); }
+  .nota { font-size: 13px; color: #cfe0d6; }
+  .rasgos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 26px 0 0; }
+  .rasgo { background: var(--pino); border: 2px solid var(--borde); border-radius: 16px; padding: 14px 16px; }
+  .rasgo b { font: 600 17px 'Fredoka', sans-serif; color: #fff; display: block; }
+  .rasgo span { color: var(--suave); font-size: 14px; }
+  .proximamente { margin: 40px 0 0; color: var(--suave); }
+  .proximamente b { color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; }
+  footer { margin: 48px 0 0; padding: 22px 0 36px; border-top: 1px solid rgba(223,235,214,.12); color: #86a097; font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  footer a { color: var(--suave); }
+  @media (max-width: 720px) { .juego { grid-template-columns: 1fr; } nav a { margin: 0 14px 0 0; } }
+</style>
 </head>
-<body><p>Llevándote a <a href="/wordwizard-juego/">Word Wizard</a>…</p></body>
+<body>
+<div class="envoltura">
+  <header>
+    <a class="marca" href="/">CapraLabs<span>Games</span></a>
+    <nav><a href="#juegos">Juegos</a><a href="mailto:hola@capralabsgames.com">Contacto</a></nav>
+  </header>
+
+  <section class="intro">
+    <h1>Juegos chiquitos, hechos con cariño</h1>
+    <p>Somos un estudio de Buenos Aires. Hacemos juegos cortos, lindos y sin trampas: nada de pagar para ganar.</p>
+  </section>
+
+  <section id="juegos">
+    <article class="juego">
+      <img src="assets/wordwizard-banner.jpg" alt="Word Wizard: Silabo, el maguito, en el bosque con el logo del juego" width="1024" height="500">
+      <div class="juego-texto">
+        <small>JUEGO DE PALABRAS</small>
+        <h2>Word Wizard</h2>
+        <p>Silabo, el maguito, te da las letras de una palabra y vos armás todas las que puedas. Desafío diario, la Torre Arcana con jefes, misiones y logros.</p>
+        <div class="botones">
+          <a class="btn btn-oro" href="https://wordwizard.capralabsgames.com/">Jugar ahora</a>
+          <a class="btn btn-madera" href="https://github.com/BoydOwen29/wordwizard-juego/releases/latest">Android (APK)</a>
+        </div>
+        <span class="nota">Pronto en Google Play. Funciona en el celular y en la compu, sin registrarte.</span>
+      </div>
+    </article>
+    <div class="rasgos">
+      <div class="rasgo"><b>Una palabra por día</b><span>La misma para todos, tres minutos y tu racha.</span></div>
+      <div class="rasgo"><b>Capítulo 1: La Torre Arcana</b><span>Veinte pisos, cuatro mundos y jefes que pelean con palabras.</span></div>
+      <div class="rasgo"><b>Sin pagar para ganar</b><span>Sin publicidad y sin compras que den ventaja.</span></div>
+    </div>
+  </section>
+
+  <p class="proximamente"><b>Lo que viene:</b> más capítulos de Word Wizard y nuevos juegos del estudio.</p>
+
+  <footer>
+    <span>© 2026 CapraLabsGames · Buenos Aires</span>
+    <a href="mailto:soporte@capralabsgames.com">soporte@capralabsgames.com</a>
+    <a href="https://wordwizard.capralabsgames.com/privacidad.html">Privacidad de Word Wizard</a>
+  </footer>
+</div>
+</body>
 </html>

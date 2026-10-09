@@ -1,3 +1,3 @@
 # CapraLabsGames
 
-Sitio raíz de GitHub Pages. Tiene el archivo `.well-known/assetlinks.json` que vincula la app de Android de Word Wizard (com.capralabsgames.wordwizard) con el juego publicado en /wordwizard-juego/.
+Portada del estudio en https://capralabsgames.com (GitHub Pages con dominio propio).
